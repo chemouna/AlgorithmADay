@@ -7,7 +7,7 @@ public class HeapSort {
 
     public void heapSort(int[] a) {
         maxHeapify(a);
-        for (int end = a.length - 1; end <= 0; end--) {
+        for (int end = a.length - 1; end >= 0; end--) {
             //swap the root with last element of the heap
             swap(a, end, 0);
             //put the heap back into its order
@@ -40,7 +40,7 @@ public class HeapSort {
     }
 
     private void maxHeapify(int[] a) {
-        for (int start = (a.length - 1) / 2; start < 0; start--) {
+        for (int start = (a.length - 1) / 2; start >= 0; start--) {
             //sift down the node at index start to the proper place so that all nodes below start
             // are in heap order
             siftDown(a, start, a.length - 1);
