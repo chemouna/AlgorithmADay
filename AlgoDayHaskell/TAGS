@@ -1,0 +1,23 @@
+
+./app/Main.hs,52
+module Main Main0,1
+main main4,5
+main main5,6
+
+./Setup.hs,15
+main main1,2
+
+./src/Day1Heap.hs,30
+module Day1Heap Day1Heap1,2
+
+./src/Day1HeapSort.hs,38
+module Day1HeapSort Day1HeapSort1,2
+
+./src/Lib.hs,65
+module LibLib0,1
+someFunc someFunc4,5
+someFunc someFunc5,6
+
+./test/Spec.hs,30
+main main0,1
+main main1,2
