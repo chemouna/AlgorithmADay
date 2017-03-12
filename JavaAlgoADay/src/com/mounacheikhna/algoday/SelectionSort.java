@@ -7,7 +7,8 @@ public class SelectionSort {
 
     void sort(int[] a, int n) {
         /*
-         * Outer loop invariant: a[0...i-1] is sorted
+         * Outer loop invariants:
+         * a[0...i-1] is sorted
          * all entries in a[i..n-1] are larger than or equal to the entries in a[0..i-1]
          */
         for (int i = 0; i < n - 1; i++) {

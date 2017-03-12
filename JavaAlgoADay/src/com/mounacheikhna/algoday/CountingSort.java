@@ -11,14 +11,13 @@ public class CountingSort {
             count[v]++;
         }
         int j = 0;
-        for (int i = 0; i < count.length; i++) {
-            while (count[j] > 0) {
+        for (int i = 0; i < a.length; i++) {
+            while (count[i] > 0) {
                 a[j] = i;
-                count[j]--;
+                count[i]--;
+                j++;
             }
-            j++;
         }
     }
-
 
 }
