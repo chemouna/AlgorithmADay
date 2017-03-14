@@ -1,4 +1,4 @@
-package com.mounacheikhna.algoday;
+package com.mounacheikhna.algoday.sorting;
 
 /**
  * Created by m.cheikhna on 12/03/2017.

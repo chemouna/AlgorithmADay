@@ -1,5 +1,6 @@
-package com.mounacheikhna.algoday;
+package com.mounacheikhna.algoday.sorting;
 
+import com.mounacheikhna.algoday.sorting.HeapSort;
 import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Before;

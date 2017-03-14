@@ -1,4 +1,4 @@
-package com.mounacheikhna.algoday;
+package com.mounacheikhna.algoday.sorting;
 
 import java.util.Arrays;
 import java.util.Random;
