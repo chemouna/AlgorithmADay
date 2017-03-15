@@ -8,7 +8,7 @@ public class Kmp {
     private String pattern;
     private int[][] dfa;
 
-    public Kmp(String pattern) {
+    void buildPatternDfa(String pattern) {
         this.pattern = pattern;
         final int m = pattern.length();
         final int alphabetSize = 256;
@@ -45,7 +45,8 @@ public class Kmp {
     public static void main(String[] args) {
         String pat = "AADA";
         String txt = "AABRAACADABRAACAADABRA";
-        Kmp kmp = new Kmp(pat);
+        Kmp kmp = new Kmp();
+        kmp.buildPatternDfa(pat);
         int offset = kmp.search(txt);
         System.out.println("index found : "+ offset);
     }

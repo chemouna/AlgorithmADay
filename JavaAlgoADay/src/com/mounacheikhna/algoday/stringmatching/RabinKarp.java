@@ -13,7 +13,7 @@ public class RabinKarp {
     private int m;           // pattern length
     private long q;          // a large prime, small enough to avoid long overflow
     private int radix;           // radix
-    private long RM;         // radix^(M-1) % Q
+    private long highestRadix;         // radix^(M-1) % Q
 
     /**
      * Preprocesses the pattern string.
@@ -27,10 +27,15 @@ public class RabinKarp {
         q = longRandomPrime();
 
         // precompute radix^(m-1) % q for use in removing leading digit
-        RM = 1;
-        for (int i = 1; i <= m - 1; i++)
-            RM = (radix * RM) % q;
+        highestRadix = computeHighestRadix();
         patHash = hash(pat, m);
+    }
+
+    private long computeHighestRadix() {
+        long highestRadix = 1;
+        for (int i = 1; i <= m - 1; i++)
+            highestRadix = (radix * highestRadix) % q;
+        return highestRadix;
     }
 
     // Compute hash for key[0..m-1]. 
@@ -72,7 +77,7 @@ public class RabinKarp {
         // check for hash match; if hash match, check for exact match
         for (int i = m; i < n; i++) {
             // Remove leading digit, add trailing digit, check for match. 
-            currentHash = (currentHash + q - RM * txt.charAt(i - m) % q) % q;
+            currentHash = (currentHash + q - highestRadix * txt.charAt(i - m) % q) % q;
             currentHash = (currentHash * radix + txt.charAt(i)) % q;
 
             // match
